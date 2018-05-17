@@ -1,10 +1,10 @@
 # AutoCode是一款简单的代码生成工具，可以快速生成controller,service,model,mapper,html文件，灵活强大。<br>
-##**工具特点:**<br>
+**工具特点:**<br>
 > * 结构简单，代码清晰。<br>
 > * 配置灵活，扩展方便。<br>
 > * 轻量便捷，模板配置。<br>
 
-##**项目结构** <br>
+**项目结构** <br>
 ```
 AutoCode<br>
 │ 
