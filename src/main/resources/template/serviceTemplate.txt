@@ -1,0 +1,81 @@
+package _package_.service;
+
+import java.util.List;
+
+import _package_.model._EntityName_;
+import com.qdone.framework.core.page.PageList;
+/**
+ * TODO 本代码由代码生成工具生成
+ *
+ * @author 付为地
+ * @date _Date_
+ */
+
+public interface _EntityName_Service {
+
+	/**
+	 * 分页查询
+	 * @param entity
+	 * @return
+	 */
+	public PageList<_EntityName_> selectPage(_EntityName_ entity);
+	
+	/**
+	 * 新增
+	 * @param object
+	 * @return
+	 */
+	public int insert(_EntityName_ object) ;
+	
+	/**
+	 * 修改
+	 * @param object
+	 * @return
+	 */
+	public int update(_EntityName_ object)  ;
+	
+	/**
+	 * 查看
+	 * @param pk
+	 * @return
+	 */
+	public _EntityName_ view(_primaryKeyFieldJavaType_ pk) ;
+	
+	/**
+	 * 查询单个
+	 * @param object
+	 * @return
+	 */
+	public _EntityName_ query(_EntityName_ object) ;
+	
+	/**
+	 * 查询集合
+	 * @param object
+	 * @return
+	 */
+	public List<_EntityName_> selectList(_EntityName_ object) ;
+	
+	/**
+	 * 删除
+	 * @param pk
+	 * @return
+	 */
+	public int delete(String pk);
+	
+	/**
+	 * 批量修改
+	 * @param object
+	 */
+	public int batchUpdate(List<_EntityName_> arr);
+	
+	/**
+	 * 批量插入
+	 * @param object
+	 */
+	public int batchInsert(List<_EntityName_> arr);
+	
+	/**
+	 * 批量删除
+	 */
+	public int batchDelete(List<_EntityName_> pkList);
+}

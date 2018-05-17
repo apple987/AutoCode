@@ -1,0 +1,107 @@
+package _package_.controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.List;
+import java.util.Map;
+import _package_.model._EntityName_;
+import _package_.service._EntityName_Service;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import com.qdone.framework.annotation.Function;
+import com.qdone.framework.core.BaseController;
+import com.qdone.common.util.SerialNo;
+
+/**
+ *_EntityBeanName_管理
+ * @付为地
+ * @date _Date_
+ */
+@Controller
+@RequestMapping("/_EntityBeanName_")
+@Api(tags = "_EntityTableMemo_管理",description = "_EntityTableMemo_信息管理")
+public class _EntityName_Controller extends BaseController{
+  
+
+    @Autowired
+	private _EntityName_Service _EntityBeanName_Service;
+
+    /**
+	 * 页面初始化
+	 */
+	@ApiOperation(value = "_EntityTableMemo_列表",notes = "进入_EntityTableMemo_列表页", httpMethod = "GET")
+	@RequestMapping(value = "init",method = RequestMethod.GET)
+	public String init(){
+		return "_EntityBeanName_/select_EntityName_";
+	}
+	
+    /**
+	 * 分页查询数据
+	 */
+	@RequestMapping(value="/selectPage",method=RequestMethod.POST)
+	@ResponseBody
+	@Function("_EntityTableMemo_分页")
+	@ApiOperation(value = "_EntityTableMemo_分页列表", notes = "_EntityTableMemo_分页列表", httpMethod = "POST",response = Map.class)
+	public Map<String, Object> selectPage(@RequestBody _EntityName_ entity){
+		return responseSelectPage(_EntityBeanName_Service.selectPage(entity));
+	}
+	
+	/**
+	 * 跳转添加
+	*/
+    @RequestMapping(value="/preInsert",method=RequestMethod.GET)
+    @ApiOperation(value = "跳转_EntityTableMemo_添加", notes = "进入_EntityTableMemo_添加页面", httpMethod = "GET")
+	public String preInsert(HttpServletRequest req){
+		return "_EntityBeanName_/insert_EntityName_";
+	} 
+	
+    /**
+     * 添加数据
+     */
+	@RequestMapping(value="/insert",method=RequestMethod.PUT)
+	@ResponseBody
+	@Function("_EntityTableMemo_添加")
+	@ApiOperation(value = "_EntityTableMemo_添加", notes = "创建_EntityTableMemo_", httpMethod = "PUT",response = Boolean.class)
+	public Boolean insert(@ApiParam(name = "_EntityTableMemo_对象", value = "传入json格式", required = true)  @RequestBody _EntityName_ entity) {
+		entity.setId(SerialNo.getRomdomID());
+		return _EntityBeanName_Service.insert(entity)>0?Boolean.TRUE:Boolean.FALSE;
+	}
+	
+	/**
+	 * 跳转更新
+	*/
+    @RequestMapping(value="/preUpdate",method=RequestMethod.GET)
+    @ApiOperation(value = "跳转_EntityTableMemo_更新", notes = "进入_EntityTableMemo_更新页面", httpMethod = "GET")
+	public String preUpdate(HttpServletRequest request){
+	    request.setAttribute("_EntityBeanName_", _ViewMethodJavaType_);
+		return "_EntityBeanName_/update_EntityName_";
+	} 
+	
+    /**
+     * 更新数据
+     */
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	@ResponseBody
+	@Function("_EntityTableMemo_更新")
+	@ApiOperation(value = "更新_EntityTableMemo_", notes = "更新_EntityTableMemo_信息", httpMethod = "POST",response = Boolean.class)
+	public Boolean update(@ApiParam(name = "_EntityTableMemo_对象", value = "传入json格式", required = true) _EntityName_ entity) {
+		return _EntityBeanName_Service.update(entity)>0?Boolean.TRUE:Boolean.FALSE;
+	}
+	
+    /**
+     * 删除数据
+     */
+	@RequestMapping(value="/delete",method=RequestMethod.POST)
+	@ResponseBody
+	@Function("_EntityTableMemo_删除")
+	@ApiOperation(value = "删除_EntityTableMemo_",notes = "删除_EntityTableMemo_", httpMethod = "POST",response = Boolean.class)
+	public Boolean delete(@RequestBody List<_EntityName_> ids) {
+		return _EntityBeanName_Service.batchDelete(ids)>0?Boolean.TRUE:Boolean.FALSE;
+	}
+    
+}

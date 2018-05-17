@@ -1,0 +1,139 @@
+package _package_.service.impl;
+import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import com.alibaba.fastjson.JSON;
+import java.util.List;
+import com.qdone.framework.core.dao.BaseDao;
+import com.qdone.framework.core.page.PageList;
+import _package_.model._EntityName_;
+import _package_.service._EntityName_Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Isolation;
+/**
+ * TODO 本代码由代码生成工具生成
+ *
+ * @author 付为地
+ * @date _Date_
+ */
+
+@Service("_SpringMVCAnnotation_Service")
+@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT)
+public class _EntityName_ServiceImpl implements _EntityName_Service{
+
+    static  Logger log=LoggerFactory.getLogger(_EntityName_ServiceImpl.class);
+    
+    @Resource(name = "baseDao")
+	private BaseDao baseDao;
+       
+	
+	
+	/**
+	 * 分页查询
+	 */
+	@Override
+	@Transactional(propagation = Propagation.NOT_SUPPORTED)
+	public PageList<_EntityName_> selectPage(_EntityName_ object) {
+	   log.info("执行_EntityName_ServiceImpl.selectPage参数：entity==>" +JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+       return baseDao.selectPage("_sqlMapperEntity_.select", object);
+	}
+
+	/**
+	 * 新增
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int insert(_EntityName_ object) {
+		log.info("_EntityName_ServiceImpl.insert参数： entity=>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+        return baseDao.insert("_sqlMapperEntity_.insert", object);
+	}
+
+	/**
+	 * 修改
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int update(_EntityName_ object){
+		log.info("执行_EntityName_ServiceImpl.update参数： entity==>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+        return baseDao.update("_sqlMapperEntity_.update", object);
+	}
+
+	/**
+	 * 浏览单个
+	 */
+	@Override
+	@Transactional(propagation = Propagation.NOT_SUPPORTED)
+	public _EntityName_ view(_primaryKeyFieldJavaType_ pk) {
+		log.info("执行_EntityName_ServiceImpl.view参数： pk=>" + pk);
+        return (_EntityName_)baseDao.view("_sqlMapperEntity_.view", pk);
+	} 
+	
+    /**
+	 * 查询单个
+	 * @param object
+	 * @return
+	 */
+	 @Transactional(propagation = Propagation.NOT_SUPPORTED)
+	public _EntityName_ query(_EntityName_ object){
+		log.info("执行_EntityName_ServiceImpl.query参数： entity=>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+        return (_EntityName_)baseDao.selectOne("_sqlMapperEntity_.query", object);
+	}
+	 
+    /**
+	 * 查询集合
+	 * @param object
+	 * @return
+	 */
+	@Override
+	@Transactional(propagation = Propagation.NOT_SUPPORTED)
+	public List<_EntityName_> selectList(_EntityName_ object) {
+		log.info("执行_EntityName_ServiceImpl.selectList参数： entity=>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+        return baseDao.selectList("_sqlMapperEntity_.select", object);
+	}
+	
+    /**
+	 * 删除
+	 * @param pk
+	 * @return
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int delete(String pk) {
+		log.info("执行_EntityName_ServiceImpl.delete参数： pk=>" + pk);
+		return baseDao.delete("_sqlMapperEntity_.delete", pk);
+	}
+    /**
+	 * 批量修改
+	 * @param object
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int batchUpdate(List<_EntityName_> object) {
+		log.info("执行_EntityName_ServiceImpl.batchUpdate参数： List=>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+        return baseDao.batchUpdate("_sqlMapperEntity_.batchUpdate", object);
+	}
+	
+    /**
+	 * 批量插入
+	 * @param object
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int batchInsert(List<_EntityName_> object) {
+	     log.info("执行_EntityName_ServiceImpl.batchInsert参数： List=>" + JSON.toJSONStringWithDateFormat(object, "yyyy-MM-dd HH:mm:ss"));
+         return baseDao.batchInsert("_sqlMapperEntity_.batchInsert", object);
+	}
+	
+    /**
+	 * 批量删除
+	 */
+	@Override
+	@Transactional(readOnly = false,rollbackFor = Exception.class)
+	public int batchDelete(List<_EntityName_> pkList) {
+		log.info("执行_EntityName_ServiceImpl.batchDelete参数： pkList=>" + JSON.toJSONStringWithDateFormat(pkList, "yyyy-MM-dd HH:mm:ss"));
+        return baseDao.batchDelete("_sqlMapperEntity_.batchDelete", pkList);
+	}   
+	
+}

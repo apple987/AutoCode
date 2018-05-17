@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>_EntityBeanName_管理</title>
+  <meta name="description" content="" />
+  <meta name="author" content="pc" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <meta name="screen-orientation"content="portrait">
+  <meta name="format-detection" content="telephone=no" />
+  <#include "/inc/common.html">
+</head>
+<body>
+		    <table  id="_EntityBeanName_Dg" 
+				    data-toggle="table"  
+				    data-method="post" 
+				    data-content-type="application/json"
+				    data-url="${request.contextPath}/_EntityBeanName_/selectPage"
+				    data-toolbar="#_EntityBeanName_Tb"
+				    data-height="355"
+					data-show-header="true" 
+					data-cache="false"
+					data-click-to-select="true"  
+					data-single-select="false" 
+					data-striped="true"
+					data-search="false" 
+					data-pagination="true"
+					data-side-pagination="server"
+					data-query-params-type="''"
+					data-page-size="10"
+					data-page-number="1"
+					data-page-list="[10,20,50,100,500,1000]"
+					data-query-params="_EntityBeanName_QueryParams"
+					data-pagination-loop="false"
+					data-classes="table table-hover table-condensed"
+			        data-sort-stable="true"
+			        data-show-footer="false"
+			        data-resizable="true"
+			        data-reorderable-columns="true"
+					data-show-toggle="true"
+			        data-show-columns="true"
+					data-show-multi-sort="true"
+					data-show-pagination-switch="true"
+					data-show-export="true"
+					data-export-types="['excel']"
+					data-export-options='{
+				         "fileName": "_EntityBeanName_列表", 
+				         "worksheetName": "sheet"
+				    }'
+			>
+			<thead>
+				<tr>
+_DataGridColnumFields_
+				</tr>
+			</thead>
+		</table>
+		
+        <div id="_EntityBeanName_Tb"  style="padding: 5px; height: auto">
+			<div style="margin-bottom: 5px">
+			    <input type="button" value="添加" style="width: 80px; height: 30px; vertical-align: bottom; line-height: 10px;" class="btn-primary" onclick="add_EntityName_()" /> 
+				<input type="button" value="修改" style="width: 80px; height: 30px; vertical-align: bottom; line-height: 10px;" class="btn-primary" onclick="edit_EntityName_()" /> 
+				<input type="button" value="删除" style="width: 80px; height: 30px; vertical-align: bottom; line-height: 10px;" class="btn-primary" onclick="delete_EntityName_()" /> 
+				<input type="button" value="查询" style="width: 80px; height: 30px; vertical-align: bottom; line-height: 10px;" class="btn-primary" onclick="find_EntityName_()" /> 
+			    <input type="button" value="清空" style="width: 80px; height: 30px; vertical-align: bottom; line-height: 10px;" class="btn-primary" onclick="clear_EntityName_()" /> 
+			</div>
+			<div>
+			   <form id="_EntityBeanName_QueryForm" method="post" action="">
+                           <table align="left">
+                              <tr>
+                                _SearchAreaFileds_
+                             </tr>
+                           </table>         
+			   </form>
+			</div>
+		</div>
+		

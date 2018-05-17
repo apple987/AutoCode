@@ -1,0 +1,135 @@
+package _package_.dao.impl;
+import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Repository;
+import com.fwd.common.page.PageInfo;
+import com.fwd.common.page.PageList;
+import com.fwd.common.util.SerialNo;
+import java.util.List;
+import javax.annotation.Resource;
+import com.fwd.common.dao.BaseDao;
+import _package_.model._EntityName_;
+import com.fwd.mvc.dao._EntityName_Dao;
+
+
+/**
+ * TODO 本代码由代码生成工具生成
+ *
+ * @author 付为地
+ * @date _Date_
+ */
+
+@Repository("_SpringMVCAnnotation_Dao")
+public class _EntityName_DaoImpl  implements _EntityName_Dao{
+
+	private Log log = LogFactory.getLog(_EntityName_DaoImpl.class);
+
+	@Resource(name="baseDao")
+	private BaseDao baseDao;
+       
+	/**
+	 * 删除
+	 */
+	@Override
+	public int delete(String pk) {
+		log.debug("执行_EntityName_DaoImpl.delete： pk==[" + pk+"]");
+		return baseDao.delete("_sqlMapperEntity_.delete", pk);
+	}
+	
+	/**
+	 * 批量删除
+	 */
+	@Override
+	public int delete(String[] pk_array) {
+          log.debug("执行_EntityName_DaoImpl.delete： pk_array=>" + pk_array);
+           for (String pk : pk_array) {
+                 log.debug(" pk=>" + pk);
+                 baseDao.delete("_sqlMapperEntity_.delete", pk);
+           }
+             return pk_array.length;
+    }
+
+	/**
+	 * 新增
+	 */
+	@Override
+	public _EntityName_ insert(_EntityName_ object) {
+		log.debug("执行_EntityName_DaoImpl.insert： object=>" + object);
+		object._SetPrimaryKeyFieldName_(SerialNo.getUNID());
+        baseDao.insert("_sqlMapperEntity_.insert", object);
+		return object;
+	}
+
+	/**
+	 * 分页查询
+	 */
+	@Override
+	public PageList selectPage(PageInfo pageInfo, Map<?,?> params) {
+	    log.debug("执行_EntityName_DaoImpl.selectPage： pageInfo=[" + pageInfo +" ] params=[" + params+"]");
+		return baseDao.selectPage("_sqlMapperEntity_.select", pageInfo, params);
+	}
+
+	/**
+	 * 更新
+	 */
+	@Override
+	public _EntityName_ update(_EntityName_ object) {
+		log.debug("执行_EntityName_DaoImpl.update： object=[" + object+"]");
+		baseDao.update("_sqlMapperEntity_.update", object);
+		return object;
+	}
+
+	/**
+	 * 浏览单个
+	 */
+	@Override
+	public _EntityName_ view(String pk) {
+		log.debug("执行_EntityName_DaoImpl.view： pk=>" + pk);
+		return (_EntityName_)baseDao.view("_sqlMapperEntity_.view", pk);
+	} 
+	/**
+	 * 查询对象
+	 */
+	@Override
+	public _EntityName_ queryBean(_EntityName_ object) {
+		log.debug("执行_EntityName_DaoImpl.queryBean： _EntityName_=>" + object);
+		return (_EntityName_)baseDao.queryBean("_sqlMapperEntity_.queryBean", object);
+	} 
+
+    /**
+	 * 根据查询条件查询
+	 */
+	@Override
+	public List<?> queryData(Map<?,?> mp) {
+		log.debug("执行_EntityName_DaoImpl.queryData： mp=>" + mp);
+		return baseDao.queryData("_sqlMapperEntity_.select", mp);
+	}
+            
+	/**
+     * 批量更新
+     */
+	@Override
+	public int batchUpdate(String sqlID, List<Object> object) {
+		log.debug("执行_EntityName_DaoImpl.batchUpdate： List=>" + object);
+		return baseDao.batchUpdate("_sqlMapperEntity_.batchUpdate", object);
+	}
+	
+    /**
+     * 批量插入
+     */
+	@Override
+	public int batchInsert(String sqlID, List<Object> object) {
+		log.debug("执行_EntityName_DaoImpl.batchInsert： List=>" + object);
+		return baseDao.batchInsert("_sqlMapperEntity_.batchInsert", object);
+	}
+	
+    /**
+     * 批量删除
+     */
+	@Override
+	public int batchDelete(String sqlID, List<Object> pkList) {
+		 log.debug("执行_EntityName_DaoImpl.batchDelete： pkList=>" + pkList);
+		  return baseDao.batchDelete("_sqlMapperEntity_.batchDelete", pkList);
+	}
+}

@@ -1,0 +1,107 @@
+<script type="text/javascript">
+	   function _EntityBeanName_QueryParams(params){
+_QueryParamsAreaFileds_
+			return params;
+	    }
+	    //显示行号
+		function getRowIndex(value, row, index) {  
+		   var page=$("#_EntityBeanName_Dg").bootstrapTable("getOptions");
+		   return page.pageSize*(page.pageNumber-1)+index+1;
+		}  
+	
+	    //添加
+	    function add_EntityName_(){
+	         var index=layer.open({
+		    	      id:"insert_EntityName_",//唯一Id    
+		    		  type: 2,//iframe模式
+		    		  area: ['800px', '500px'],
+		    		  title: '添加_EntityName_',//标题
+		    		  shade: 0.6 ,//遮罩透明度
+		    		  maxmin: true, //允许全屏最小化
+		    		  anim: 1, //0-6的动画形式，-1不开启
+		    		  content: "${request.contextPath}/_EntityBeanName_/preInsert",//内容
+	    	});
+	        //window.location.href="${request.contextPath}/_EntityBeanName_/preInsert";
+	    }
+	    //修改 
+	    function edit_EntityName_(){
+	        var row = $('#_EntityBeanName_Dg').bootstrapTable('getSelections');
+		    if (row.length==1&&row[0]._primaryKeyField_!=null&&row[0]._primaryKeyField_!=""){//主键不为空
+			    	var index=layer.open({
+					    	      id:"update_EntityName_",//唯一Id    
+					    		  type: 2,//iframe模式
+					    		  area: ['800px', '500px'],
+					    		  title: '修改_EntityName_',//标题
+					    		  shade: 0.6 ,//遮罩透明度
+					    		  maxmin: true, //允许全屏最小化
+					    		  anim: 1, //0-6的动画形式，-1不开启
+					    		  content: "${request.contextPath}/_EntityBeanName_/preUpdate?_primaryKeyField_="+row[0]._primaryKeyField_,//内容
+			    	});
+				//window.location.href="${request.contextPath}/_EntityBeanName_/preUpdate?_primaryKeyField_="+row[0]._primaryKeyField_;
+    		}else{
+    			layer.open({
+				  title: '提示信息'
+				  ,content: '请选择一行记录'
+				});  
+    		}
+	    }
+	    //删除
+        function delete_EntityName_(){
+	      var row = $('#_EntityBeanName_Dg').bootstrapTable('getSelections');
+		  if (row.length>0){
+			    layer.confirm('你确定要删除选中的记录？', {icon: 3, title:'提示'}, function(index){
+			                $.ajax({
+					    		url:'${request.contextPath}/_EntityBeanName_/delete',
+	                            contentType:"application/json",
+			    	    		dataType : "json",
+			    	    		type : "post",
+	                            data : JSON.stringify(row), 
+					    		success:function(json,status){
+					    		    layer.msg('删除成功', {
+					    				icon:1, 
+									    time: 1000,
+									    end: function(index, layero){ 
+									    	 find_EntityName_();
+										}
+									});
+					    		},
+					    		error:function(json,status){
+					    		    layer.msg('系统异常,请稍后重试或联系技术人员', {
+					    				icon:5, 
+									    time: 1000,
+									    end: function(index, layero){ 
+									    	find_EntityName_();
+										}
+									}); 
+					    		}
+					    	});
+			     layer.close(index);
+			  });
+	        }else{
+	        	   layer.open({
+					  title: '提示信息'
+					  ,content: '请选择需要删除的行!',
+					  btnAlign: 'c'
+					}); 
+	        }
+	    }
+	    //查询
+		function find_EntityName_(){
+			$("#_EntityBeanName_Dg").bootstrapTable("refresh",{
+					"silent":true,
+					"resetOffset":false,
+					"url":"${request.contextPath}/_EntityBeanName_/selectPage",
+					query:$('#_EntityBeanName_QueryForm').serializeObject()
+			}); 
+		} 
+	    //清空查询条件
+	   function clear_EntityName_(){
+	       $(':input','#_EntityBeanName_QueryForm') 
+		    .not(':button, :submit, :reset, :hidden') 
+		    .val('') 
+		    .removeAttr('checked') 
+		    .removeAttr('selected'); 
+	   }
+	</script>
+ </body>
+</html>

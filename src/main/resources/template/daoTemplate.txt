@@ -1,0 +1,94 @@
+package _package_.dao;
+
+import java.util.Map;
+import java.util.List;
+
+import _package_.model._EntityName_;
+import com.fwd.common.page.PageInfo;
+import com.fwd.common.page.PageList;
+/**
+ * TODO 本代码由代码生成工具生成
+ *
+ * @author 付为地
+ * @date _Date_
+ */
+
+public interface _EntityName_Dao {
+
+	/**
+	 * 分页查询
+	 * @param pageInfo
+	 * @param params
+	 * @return
+	 * @throws Exception
+	 */
+	public PageList selectPage(PageInfo pageInfo, Map<?,?> params);
+	
+	/**
+	 * 新增
+	 * @param object
+	 * @return
+	 * @throws Exception
+	 */
+	public _EntityName_ insert(_EntityName_ object) ;
+	
+	/**
+	 * 修改
+	 * @param object
+	 * @return
+	 * @throws Exception
+	 */
+	public _EntityName_ update(_EntityName_ object) ;
+	
+	/**
+	 * 查看
+	 * @param pk
+	 * @return
+	 * @throws Exception
+	 */
+	public _EntityName_ view(String pk) ;
+	/**
+	 * 查询方法
+	 * @param pk
+	 * @return
+	 * @throws Exception
+	 */
+	public _EntityName_ queryBean(_EntityName_ object) ;
+	
+	/**
+	 * 批量删除
+	 * @param pk_array
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete(String[] pk_array);
+	
+	/**
+	 * 删除
+	 * @param pk
+	 * @return
+	 * @throws Exception
+	 */
+	public int delete(String pk);
+
+     /**
+	 * 不带分页的查询
+	 * 
+	 */
+	public List<?> queryData(Map<?,?> mp);
+	
+	/**
+	 * 批量修改
+	 * @param object
+	 */
+	public int batchUpdate(List<_EntityName_> object);
+	/**
+	 * 批量插入
+	 * @param object
+	 */
+	public int batchInsert(List<_EntityName_> object);
+	/**
+	 * 批量删除
+	 */
+	public int batchDelete(List<Object> pkList);
+}
