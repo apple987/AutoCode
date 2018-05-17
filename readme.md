@@ -19,9 +19,9 @@ AutoCode
 │ 
 ├─TestRadModel 项目启动类
 │  
-├──resources <br>
+├──resources 
 │  ├─config.properties 数据库配置
-│  └─template <br>
+│  └─template 
 │       ├─controllerTemplate.txt 构建controller模板
 │       ├─serviceTemplate.txt 构建service模板
 │       ├─serviceImplTemplate.txt 构建service模板
