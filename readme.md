@@ -6,30 +6,30 @@
 
 **项目结构**
 ```
-AutoCode<br>
+AutoCode
 │ 
-├─com.qdone.radmodel <br>
-│  ├─ControllerBuilder 构建controller代码<br>
-│  ├─ServiceBuilder 构建service代码<br>
-│  ├─IBatisBuilder 构建mybatis代码<br>
-│  ├─EntityBuilder 构建数据库实体类<br>
-│  ├─SelectJspBuilder 构建列表页面代码<br>
-│  ├─UpdateJspBuilder 构建更新数据页面代码<br>
-│  └─InsertJspBuilder 构建添加数据页面代码<br>
+├─com.qdone.radmodel 
+│  ├─ControllerBuilder 构建controller代码
+│  ├─ServiceBuilder 构建service代码
+│  ├─IBatisBuilder 构建mybatis代码
+│  ├─EntityBuilder 构建数据库实体类
+│  ├─SelectJspBuilder 构建列表页面代码
+│  ├─UpdateJspBuilder 构建更新数据页面代码
+│  └─InsertJspBuilder 构建添加数据页面代码
 │ 
-├─TestRadModel 项目启动类<br>
+├─TestRadModel 项目启动类
 │  
 ├──resources <br>
-│  ├─config.properties 数据库配置 <br>
+│  ├─config.properties 数据库配置
 │  └─template <br>
-│       ├─controllerTemplate.txt 构建controller模板<br>
-│       ├─serviceTemplate.txt 构建service模板<br>
-│       ├─serviceImplTemplate.txt 构建service模板<br>
-│       ├─serviceImplTemplate.txt 构建service模板<br>
-│       ├─selectHeader.txt 构建列表页头部信息模板<br>
-│       ├─selectFooter.txt 构建列表页底部信息模板<br>
-│       ├─insertHeader.txt 构建添加数据页面模板<br>
-│       └─updateHeader.txt 构建更新数据页面代码<br>
+│       ├─controllerTemplate.txt 构建controller模板
+│       ├─serviceTemplate.txt 构建service模板
+│       ├─serviceImplTemplate.txt 构建service模板
+│       ├─serviceImplTemplate.txt 构建service模板
+│       ├─selectHeader.txt 构建列表页头部信息模板
+│       ├─selectFooter.txt 构建列表页底部信息模板
+│       ├─insertHeader.txt 构建添加数据页面模板
+│       └─updateHeader.txt 构建更新数据页面代码
 │ 
 ```
 **本地部署**<br>
