@@ -26,10 +26,10 @@ AutoCode
 │       ├─serviceTemplate.txt 构建service模板
 │       ├─serviceImplTemplate.txt 构建service模板
 │       ├─serviceImplTemplate.txt 构建service模板
-│       ├─selectHeader.txt 构建列表页头部信息模板
-│       ├─selectFooter.txt 构建列表页底部信息模板
-│       ├─insertHeader.txt 构建添加数据页面模板
-│       └─updateHeader.txt 构建更新数据页面代码
+│       ├─selectHeader.txt 列表页头部模板
+│       ├─selectFooter.txt 列表页底部模板
+│       ├─insertHeader.txt 添加页面模板
+│       └─updateHeader.txt 更新页面模板
 │ 
 ```
 **本地部署**<br>
