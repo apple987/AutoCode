@@ -25,7 +25,6 @@ AutoCode
 │       ├─controllerTemplate.txt 构建controller模板
 │       ├─serviceTemplate.txt 构建service模板
 │       ├─serviceImplTemplate.txt 构建service模板
-│       ├─serviceImplTemplate.txt 构建service模板
 │       ├─selectHeader.txt 列表页头部模板
 │       ├─selectFooter.txt 列表页底部模板
 │       ├─insertHeader.txt 添加页面模板
